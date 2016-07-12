@@ -1,0 +1,66 @@
+﻿@model CorgiFanSubBox.Models.BoxModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BoxModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PremiumItem1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PremiumItem1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PremiumItem2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PremiumItem2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PremiumItem3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PremiumItem3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyItem1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyItem1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyItem2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyItem2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SurveyItem3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SurveyItem3)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

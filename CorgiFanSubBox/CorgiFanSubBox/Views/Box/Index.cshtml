@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CorgiFanSubBox.Models.BoxModel>
+
+@{
+    ViewBag.Title = "Survey";
+}
+
+@using (Html.BeginForm("Create", "Surveys", FormMethod.Post))
+{
+    <h2>Survey</h2>
+    <h2>Please Answer The Following:</h2>
+    <table class="table">
+        <tr>
+            <th>
+                SurveyQuestionsModel
+            </th>
+
+            <th>
+                
+            </th>
+        </tr>
+        @Html.AntiForgeryToken()
+        @Html.EditorForModel()
+    </table>
+    <div class="form-actions no-color">
+        <input type="submit" value="Submit Answers" class="btn btn-warning" />
+        @Html.ActionLink("Back to Profile", "Index", "Manage", null, new { @class = "btn btn-primary" })
+    </div>
+}

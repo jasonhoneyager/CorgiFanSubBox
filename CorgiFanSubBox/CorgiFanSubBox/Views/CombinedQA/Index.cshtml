@@ -1,0 +1,41 @@
+﻿@model CorgiFanSubBox.Models.CombinedQAViewModel
+
+@{
+    ViewBag.Title = "Corgi Ownership Survey";
+}
+
+@using (Html.BeginForm("Create", "CombinedQAModel", FormMethod.Post))
+{
+    
+    <h2>Survey</h2>
+    <h4>Please Answer The Following:</h4>
+    <h5>Question:</h5>
+    <table>
+        @foreach (var item in Model.CombinedQAs)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.SurveyQuestions.Question)
+                </td>
+                @foreach(var answer in Model.SurveyAnswers.Where(x => x.ID == Model.CombinedQAs.Where(y=> y.SurveyQuestions.ID == item.SurveyQuestions.ID).Single().SurveyAnswers.ID))
+                {
+                 <td>
+                     @Html.DisplayFor(x => answer.Result)
+                 </td>   
+                }
+            </tr>
+        }
+
+    </table>
+    <table class="table">
+        <tr>
+            
+        </tr>
+        @Html.AntiForgeryToken()
+        @Html.EditorForModel()
+    </table>
+    <div class="form-actions no-color">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+        @Html.ActionLink("Back to Home", "Index", "Home", null, new { @class = "btn btn-primary" })
+    </div>
+}
